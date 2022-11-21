@@ -1,0 +1,314 @@
+{
+	"id": "0cc55045-af6f-4941-9c18-73c5849b8082",
+	"name": "VK_api_likes",
+	"timestamp": "2022-11-21T08:40:41.611Z",
+	"collection_id": "19574069-276cd72b-552c-45c6-a3ce-91a6be580176",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 16,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "cd58bba7-6e85-4e6f-aade-8456ce77ba72",
+			"name": "likes.getList",
+			"url": "https://api.vk.com/method/likes.getList?type=photo&owner_id=-178573908&item_id=457284349&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg",
+			"time": 71,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"Got key 'items' in JSON body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Got key 'items' in JSON body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				71
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"Got key 'items' in JSON body": true
+				}
+			]
+		},
+		{
+			"id": "7891fddc-1711-4d82-bb82-265dbd99e979",
+			"name": "likes.getList negative",
+			"url": "https://api.vk.com/method/likes.getList?type=photo&owner_id=123123&item_id=457284349&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg",
+			"time": 50,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"Get error 'Access denied: access restriction'": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Get error 'Access denied: access restriction'": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				50
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"Get error 'Access denied: access restriction'": true
+				}
+			]
+		},
+		{
+			"id": "fb16b195-e7ff-4f6e-9822-3ce23d87b8e0",
+			"name": "likes.add",
+			"url": "https://api.vk.com/method/likes.add?type=photo&owner_id=-178573908&item_id=457284349&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg",
+			"time": 158,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"Got key 'likes' in JSON body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Got key 'likes' in JSON body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				158
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"Got key 'likes' in JSON body": true
+				}
+			]
+		},
+		{
+			"id": "9f33c1e4-66fa-4bd4-a153-74170de2be70",
+			"name": "likes.add negative",
+			"url": "https://api.vk.com/method/likes.add?type=photo&owner_id=-178573908&item_id=457284349&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg&type=post",
+			"time": 46,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"One of the parameters specified was missing or invalid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"One of the parameters specified was missing or invalid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				46
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"One of the parameters specified was missing or invalid": true
+				}
+			]
+		},
+		{
+			"id": "313e9ab0-3119-44a1-bbcb-64bbd4925e08",
+			"name": "likes.isLiked",
+			"url": "https://api.vk.com/method/likes.isLiked?type=photo&owner_id=-178573908&item_id=457284349&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg",
+			"time": 35,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"Got key 'liked' in JSON body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Got key 'liked' in JSON body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				35
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"Got key 'liked' in JSON body": true
+				}
+			]
+		},
+		{
+			"id": "d7b614c9-a7b3-4d7d-9183-5df62155e4bb",
+			"name": "likes.isLiked negative",
+			"url": "https://api.vk.com/method/likes.isLiked?type=photo&owner_id=-178573908&item_id=aaaaaa&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg",
+			"time": 35,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"One of the parameters specified was missing or invalid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"One of the parameters specified was missing or invalid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				35
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"One of the parameters specified was missing or invalid": true
+				}
+			]
+		},
+		{
+			"id": "13f7bab4-dc3e-49e6-b0b8-66ad303c5110",
+			"name": "likes.delete",
+			"url": "https://api.vk.com/method/likes.delete?type=photo&owner_id=-178573908&item_id=457284349&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg",
+			"time": 68,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"Response has counter of likes": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has counter of likes": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				68
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"Response has counter of likes": true
+				}
+			]
+		},
+		{
+			"id": "2064e406-9f8b-44a4-b028-3751bdfa7466",
+			"name": "likes.delete negative",
+			"url": "https://api.vk.com/method/likes.delete?type=photo&owner_id=-178573908&item_id=457284349&v=5.131&access_token=vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg",
+			"time": 52,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 and response is JSON": true,
+				"One of the parameters specified was missing or invalid": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 and response is JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"One of the parameters specified was missing or invalid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				52
+			],
+			"allTests": [
+				{
+					"Status code is 200 and response is JSON": true,
+					"One of the parameters specified was missing or invalid": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 515,
+	"collection": {
+		"requests": [
+			{
+				"id": "cd58bba7-6e85-4e6f-aade-8456ce77ba72",
+				"method": "GET"
+			},
+			{
+				"id": "7891fddc-1711-4d82-bb82-265dbd99e979",
+				"method": "GET"
+			},
+			{
+				"id": "fb16b195-e7ff-4f6e-9822-3ce23d87b8e0",
+				"method": "GET"
+			},
+			{
+				"id": "9f33c1e4-66fa-4bd4-a153-74170de2be70",
+				"method": "GET"
+			},
+			{
+				"id": "313e9ab0-3119-44a1-bbcb-64bbd4925e08",
+				"method": "GET"
+			},
+			{
+				"id": "d7b614c9-a7b3-4d7d-9183-5df62155e4bb",
+				"method": "GET"
+			},
+			{
+				"id": "13f7bab4-dc3e-49e6-b0b8-66ad303c5110",
+				"method": "GET"
+			},
+			{
+				"id": "2064e406-9f8b-44a4-b028-3751bdfa7466",
+				"method": "GET"
+			}
+		]
+	}
+}

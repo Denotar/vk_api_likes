@@ -1,0 +1,615 @@
+{
+	"info": {
+		"_postman_id": "276cd72b-552c-45c6-a3ce-91a6be580176",
+		"name": "VK_api_likes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19574069"
+	},
+	"item": [
+		{
+			"name": "likes.getList",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Позитивный тест",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Got key 'items' in JSON body\", function() {",
+							"    pm.response.to.have.jsonBody('response.count', );",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.getList?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}likes",
+						"getList"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.getList negative",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"pm.collectionVariables.set(\"owner_id\", \"123123\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//негативный тест с некорректным owner_id",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"Get error 'Access denied: access restriction'\", function() {",
+							"    pm.response.to.have.jsonBody('error.error_msg', \"Access denied: access restriction\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.getList?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}likes",
+						"getList"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.add",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"pm.collectionVariables.set(\"owner_id\", \"-178573908\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Позитивный тест",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"Got key 'likes' in JSON body\", function() {",
+							"    pm.response.to.have.jsonBody('response.likes', );",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.add?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}likes",
+						"add"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.add negative",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Негативный тест c использованием двух типов item_id одновременно",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"One of the parameters specified was missing or invalid\", function() {",
+							"    pm.response.to.have.jsonBody('error.error_msg', \"One of the parameters specified was missing or invalid: object not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.add?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}&type=post",
+					"host": [
+						"{{base_url}}likes",
+						"add"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "type",
+							"value": "post"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.isLiked",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Позитивный тест",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Got key 'liked' in JSON body\", function() {",
+							"    pm.response.to.have.jsonBody('response.liked', );",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.isLiked?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}likes",
+						"isLiked"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.isLiked negative",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"pm.collectionVariables.set(\"item_id\", \"aaaaaa\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Негативный тест. Передаем в запросе некорректный item_id",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"One of the parameters specified was missing or invalid\", function() {",
+							"    pm.response.to.have.jsonBody('error.error_msg', \"One of the parameters specified was missing or invalid: item_id not integer\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.isLiked?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}likes",
+						"isLiked"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.delete",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"pm.collectionVariables.set(\"item_id\", \"457284349\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Позитивный тест",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"Response has counter of likes\", function() {",
+							"    pm.response.to.have.jsonBody('response.likes',);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.delete?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}likes",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes.delete negative",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Негативный тест. Повторяем likes.delete. Невозможно убрать лайк которого уже нет, должна возникнуть ошибка",
+							"pm.test(\"Status code is 200 and response is JSON\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test(\"One of the parameters specified was missing or invalid\", function() {",
+							"    pm.response.to.have.jsonBody('error.error_msg', \"Access denied\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}likes.delete?type={{type}}&owner_id={{owner_id}}&item_id={{item_id}}&v={{v}}&access_token={{access_token}}",
+					"host": [
+						"{{base_url}}likes",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "{{type}}"
+						},
+						{
+							"key": "owner_id",
+							"value": "{{owner_id}}"
+						},
+						{
+							"key": "item_id",
+							"value": "{{item_id}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "auth_key",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "auth_key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"access_token = \"vk1.a.0UlhGOu0rGbf24M3mtjQB-mBIVTaqk9Kel1y56_Uysz0yL3uq3023Q4RjV2DetU_BmTzQWd2tdlDyUg-87dC21auc2cHnadryqTVjWAzUDtWy3LjU8nnEaJDRdmmo0GGBeuKWhCPtsDoMiVYz2xpJqir22Os5RRF-AzJ31iYpZIbmXeX_AzuD0UesTzk0SUqYxnHPpMFilGSluVhTB2cVg\"//\"some_access_token\"",
+					"",
+					"pm.collectionVariables.set(\"owner_id\", \"-178573908\");",
+					"pm.collectionVariables.set(\"access_token\", access_token);",
+					"pm.collectionVariables.set(\"base_url\", \"https://api.vk.com/method/\");",
+					"pm.collectionVariables.set(\"item_id\", \"457284349\");",
+					"pm.collectionVariables.set(\"owner_id\", \"-178573908\");",
+					"pm.collectionVariables.set(\"v\", \"5.131\");",
+					"pm.collectionVariables.set(\"type\", \"photo\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "owner_id",
+			"value": ""
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "item_id",
+			"value": ""
+		},
+		{
+			"key": "v",
+			"value": ""
+		},
+		{
+			"key": "type",
+			"value": ""
+		}
+	]
+}
